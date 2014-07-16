@@ -7,11 +7,22 @@ use Symfony\Component\Form\Test\TypeTestCase;
 
 class DateRangeTypeTest extends TypeTestCase
 {
+    /**
+     * Test that valid submit works
+     */
     public function testSubmitValidData()
     {
         $formData = array(
-            'start' => 'test',
-            'end' => 'test2'
+            'start' => [
+                'day' => '01',
+                'month' => '06',
+                'year' => '1988'
+            ],
+            'end' => [
+                'day' => '16',
+                'month' => '07',
+                'year' => '2014'
+            ]
         );
 
         $type = new DateRangeType();
